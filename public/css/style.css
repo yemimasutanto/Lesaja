@@ -21,14 +21,12 @@ body {
   font-family: LesajaFont-Bold;
 }
 
-h1 {
+body h3 {
   font-family: LesajaFont-Italic;
 }
 
-.btn {
+.btn, .btn-outline-success:hover, .btn-outline-success:not(:disabled):not(.disabled):active {
   border-width: 2px;
-  color: #fff;
-  background-color: #FF7408;
   border-color: #FF7408;
 }
 
@@ -40,25 +38,19 @@ h1 {
   width: 150px;
 }
 
-.btn-success {
+.btn-success, .btn-outline-success:hover, .btn-outline-success:not(:disabled):not(.disabled):active {
   background-color: #FF7408;
+  color: #fff;
 }
 
-.btn-success:hover {
+.btn-success:hover, .btn-success:not(:disabled):not(.disabled):active {
   background-color: #F06800;
   border-color: #F06800;
-  color: #fff;
 }
 
 .btn-outline-success {
   color: #FF7408;
   background-color: #fff;
-}
-
-.btn-outline-success:hover {
-  background-color: #FF7408;
-  color: #fff;
-  border-color: #FF7408;
 }
 
 .btn-link {
@@ -98,8 +90,4 @@ h1 {
   border: 1px solid #FF7408;
   border-radius: 10px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-select option {
-  line-height: 20pxx;
 }

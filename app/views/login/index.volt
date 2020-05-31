@@ -14,11 +14,11 @@
         <center>
             {{ link_to('dashboard', image('img/lesaja.png', 'width': '200')) }}
         </center>
-        <input class="form-control" name="email" type="text" placeholder="Email" style="margin: 30px 0;">
-        <input class="form-control" name="password" type="password" placeholder="Sandi" style="margin: 10px 0;">
+        <input class="form-control" name="email" type="text" placeholder="Email" required style="margin: 30px 0;">
+        <input class="form-control" name="password" type="password" placeholder="Sandi" required style="margin: 10px 0;">
        
         <h6 align="right" style="margin: 0 0 20px 0;">
-            <a href="/reset" class="btn-link">Lupa Password?</a>
+            <a href="/reset" class="btn-link">Lupa Sandi?</a>
         </h6>
         <div align="center" style="margin: 0 0 20px 0;">
             {{ submit_button('MASUK', 'class':'btn btn-md btn-success') }}
