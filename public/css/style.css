@@ -1,0 +1,112 @@
+@font-face {
+  font-family: LesajaFont-Regular;
+  src: url("../font/GoogleSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: LesajaFont-Bold;
+  src: url("../font/GoogleSans-Bold.ttf") format("truetype");
+}
+
+body {
+  font-family: LesajaFont-Regular;
+}
+
+ a, .btn {
+  font-family: LesajaFont-Bold;
+}
+
+.btn {
+  border-width: 2px;
+  width: 150px;
+  color: #fff;
+  background-color: #FF7408;
+  border-color: #FF7408;
+}
+
+.btn-success {
+  background-color: #FF7408;
+}
+
+.btn-success:hover {
+  background-color: #F06800;
+  border-color: #F06800;
+  color: #fff;
+}
+
+.btn-outline-success {
+  color: #FF7408;
+  background-color: #fff;
+}
+
+.btn-outline-success:hover {
+  background-color: #FF7408;
+  color: #fff;
+  border-color: #FF7408;
+}
+
+.btn-link {
+  font-weight: 400;
+  color: #FF7408;
+  font-size: small;
+}
+
+.btn-link:hover {
+  color: #F06800;
+  text-decoration: none;
+}
+
+.box-center {
+  padding: 40px 80px;
+  width: 450px;
+  margin: 5% auto;
+  border: 1px solid #FF7408;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.form-control{
+  color: #FF7408;
+  opacity: 1;
+  display: block;
+  height: 42px;
+  padding: 0.375rem 0.75rem;
+  font-size: 14px;
+  font-weight: 200;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #FF7408;
+  border-radius: 10px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-sm{
+  width: 88px;
+}
+
+.btn-outline-medium {
+  border-radius: 10px;
+  width: 134px;
+  height: 36px;
+  font-size: 14px;
+  border-width: 1px;
+  color: #FF7408;
+  background-color:#fff;
+  border-color: #FF7408;
+}
+
+.btn-outline-small {
+  border-radius: 10px;
+  width: 88px;
+  height: 36px;
+  color: #FF7408;
+  border-width: 1px;
+  background-color:#fff;
+  border-color: #FF7408;
+}
+
+.btn-outline-small:hover {
+  background-color: #FF7408;
+  color: #fff;
+  border-color: #FF7408;
+}
