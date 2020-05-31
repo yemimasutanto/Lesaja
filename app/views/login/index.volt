@@ -21,7 +21,7 @@
             <a href="/reset" class="btn-link">Lupa Password?</a>
         </h6>
         <div align="center" style="margin: 0 0 20px 0;">
-            {{ submit_button('MASUK', 'class':'btn btn-success') }}
+            {{ submit_button('MASUK', 'class':'btn btn-md btn-success') }}
         </div>
         <br>
         <div class="bottom-login" align="center">

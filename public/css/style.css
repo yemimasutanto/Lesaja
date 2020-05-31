@@ -8,6 +8,11 @@
   src: url("../font/GoogleSans-Bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: LesajaFont-Italic;
+  src: url("../font/GoogleSans-Italic.ttf") format("truetype");
+}
+
 body {
   font-family: LesajaFont-Regular;
 }
@@ -16,12 +21,23 @@ body {
   font-family: LesajaFont-Bold;
 }
 
+h1 {
+  font-family: LesajaFont-Italic;
+}
+
 .btn {
   border-width: 2px;
-  width: 150px;
   color: #fff;
   background-color: #FF7408;
   border-color: #FF7408;
+}
+
+.btn-sm {
+  width: 88px;
+}
+
+.btn-md {
+  width: 150px;
 }
 
 .btn-success {
@@ -65,7 +81,11 @@ body {
   background-color: #fff;
 }
 
-.form-control{
+.content-section {
+  margin: 100px 50px;
+}
+
+.form-control, select {
   color: #FF7408;
   opacity: 1;
   display: block;
@@ -80,33 +100,6 @@ body {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.btn-sm{
-  width: 88px;
-}
-
-.btn-outline-medium {
-  border-radius: 10px;
-  width: 134px;
-  height: 36px;
-  font-size: 14px;
-  border-width: 1px;
-  color: #FF7408;
-  background-color:#fff;
-  border-color: #FF7408;
-}
-
-.btn-outline-small {
-  border-radius: 10px;
-  width: 88px;
-  height: 36px;
-  color: #FF7408;
-  border-width: 1px;
-  background-color:#fff;
-  border-color: #FF7408;
-}
-
-.btn-outline-small:hover {
-  background-color: #FF7408;
-  color: #fff;
-  border-color: #FF7408;
+select option {
+  line-height: 20pxx;
 }

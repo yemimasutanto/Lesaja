@@ -23,7 +23,7 @@
         <input class="form-control mr-sm-2" name="password" type="password" placeholder="Masukkan Sandi Baru" required style="margin: 30px 0 50px 0;">
         <div align="center">
             <a href='/' class="btn btn-outline-success btn-sm" type="button" style="margin: 0 20px 0 0;">CANCEL</a>
-            {{ submit_button('SUBMIT', 'class':'btn btn-success btn-sm') }}
+            {{ submit_button('SUBMIT', 'class':'btn btn-sm btn-success') }}
         </div>
     {{ endform()}}
 </body>

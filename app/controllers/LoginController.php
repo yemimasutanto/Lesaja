@@ -11,11 +11,11 @@ class LoginController extends ControllerBase{
 
     public function loginSubmitAction(){
 
-        // Jika masih terotentikasi ketika login
-        if($this->session->has('AUTH_ID')){
-            $this->flashSession->error("Already Login");
-            return $this->response->redirect('dashboard');
-        }
+        // // Jika masih terotentikasi ketika login
+        // if($this->session->has('AUTH_ID')){
+        //     $this->flashSession->error("Already Login");
+        //     return $this->response->redirect('dashboard');
+        // }
 
         // Jika menekan tombol Masuk
         if ($this->request->isPost()) {

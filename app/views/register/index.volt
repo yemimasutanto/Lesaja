@@ -17,7 +17,7 @@
                 <input class="form-control mr-sm-2" name = "password" type="password" placeholder="Sandi" required style="margin: 30px 0;">
                 <input class="form-control mr-sm-2" name = "confirm" type="password" placeholder="Konfirmasi Sandi" required style="margin: 30px 0 30px 0;">
             <center>
-                {{ submit_button('DAFTAR', 'class':'btn btn-success') }}
+                {{ submit_button('DAFTAR', 'class':'btn btn-md btn-success') }}
             </center>   
             <br>
             <div class="bottom-login" align="center">
