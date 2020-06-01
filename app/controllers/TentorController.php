@@ -17,7 +17,7 @@ class TentorController extends ControllerBase
         $getUserId = $this->session->get('AUTH_ID');
 
         $query = $this->modelsManager->createQuery(
-            "SELECT DISTINCT nama_tentor, email, jkel, tgl_lahir FROM tentor = $getUserId");
+            "SELECT DISTINCT nama_tentor, lulusan, jkel, email_tentor FROM tentor = $getUserId");
         $list= $query->execute();
 
         // echo var_dump($tentor);

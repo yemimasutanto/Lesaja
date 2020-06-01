@@ -14,31 +14,28 @@ class ChangePasswordController extends ControllerBase
     public function changeSubmitAction(){
         if ($this->request->isPost()) 
         {
-            $password = $this->request->getPost("old-pwd");
+            $password_murid = $this->request->getPost("old-pwd");
             $confirm = $this->request->getPost("new-pwd");
             $confirm1 = $this->request->getPost('new-pwd1');
 
-            if ($password === null)
+            if ($password_murid === null)
             {
                 $this->flashSession->error("Password anda kosong");
                 //pick up the same view to display the flash session errors
                 return $this->view->pick("changepassword/index");
             }            
-
-            
-
             $exist = Murid::findFirst(
                 [
-                    'conditions' => 'password = :pwd:',
+                    'conditions' => 'password_murid = :pwd:',
                     'bind'       => [
-                        'pwd' => $password, //eh
+                        'pwd' => $password_murid,
                     ],
                 ]
             );
 
             if (!$exist)
             {
-                $this->flashSession->error("Password anda salah ".$password);
+                $this->flashSession->error("Password anda salah ".$password_murid);
                 return $this->response->redirect('changepassword');
             }
 
@@ -49,14 +46,14 @@ class ChangePasswordController extends ControllerBase
                     return $this->response->redirect('changepassword');
                 }
 
-                if($password !== $exist->password)
+                if($password_murid !== $exist->password_murid)
                 {
                     return $this->response->redirect('changepassword');
                 }
                 else
                 {
                     // set value
-                    $exist->password = $confirm;
+                    $exist->password_murid = $confirm;
                     
                     // Store and check for errors
                     $success = $exist->update();

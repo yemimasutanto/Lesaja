@@ -8,12 +8,12 @@
     <link rel="stylesheet" type="text/css" href="/css/responsive.css">
 </head>
 <body class="bg-guest">
-{{ flashSession.output() }}
-{{ form('changepassword/changeSubmit', 'method': 'post') }}
+<?= $this->flashSession->output() ?>
+<?= $this->tag->form(['changepassword/changeSubmit', 'method' => 'post']) ?>
     <div class="box" align = "center"> 
         <div class="content">
             <p align="center">
-                {{ link_to('login', image('img/lesaja.png', 'width': '200')) }}
+                <?= $this->tag->linkTo(['login', $this->tag->image(['img/lesaja.png', 'width' => '200'])]) ?>
             </p>
             <div class="css-tabluar1">
                 <div class="css-lapisankedua1">
@@ -45,11 +45,11 @@
             <div class="btnbawah" align="center">
                 <div align="center">
                     <a href='/dashboard' class="btn btn-outline-small btncancel btn-css btn-primary:hover" type="button">CANCEL</a>
-                    {{ submit_button('SUBMIT', 'class':'btn btn-submit btnyesbtn-css-1 btn-primary:hover') }}
+                    <?= $this->tag->submitButton(['SUBMIT', 'class' => 'btn btn-submit btnyesbtn-css-1 btn-primary:hover']) ?>
                 </div>
             </div>
        </div>   
     </div> 
-{{ endform()}}
+<?= $this->tag->endform() ?>
 </body>
 </html>
