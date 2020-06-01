@@ -13,18 +13,17 @@
     <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
         <a class="navbar-brand" href="/dashboard"><img src="img/lesaja.png" alt="Logo" style="width: 100px;"></a>
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item align-middle" align="center">
-                <div class="kelasaya" align="center"> 
-                    <a href="/kelas" align="center">Kelas Saya<span class="sr-only"></a>
-                </div>
+            <li class="nav-item"> 
+                <a href="/kelas" class="nav-link">Kelas Saya<span class="sr-only"></a>
             </li>
         </ul>
-        <div class="infotentor">
-            <a href="/tentor" for="tentor">Temukan tentormu</a>
-        </div>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#"> <?=$this->session->get('AUTH_NAME');?></a>
+                <a href="/tentor" class="nav-link" for="tentor">Temukan tentormu</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/changepassword"> <?=$this->session->get('AUTH_NAME');?></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/logout">
@@ -36,7 +35,7 @@
         
     <!-- content -->
     <main>
-        <div style="overflow-x:auto">
+        <div style="overflow-x:auto content-section">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -48,16 +47,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for item in tentor %}
-                    <tr>
-                        <th scope="row">{{ loop.index }}</th>
-                        <td>{{ item['nama_tentor']}}</td>
-                        <td>{{ item['lulusan'] }}</td>
-                        <td>{{ item['jkel']}}</td>
-                        <td>{{ item['email_tentor'] }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
             </table>
         </div>
     </main>

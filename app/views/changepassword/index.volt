@@ -13,7 +13,7 @@
     <div class="box" align = "center"> 
         <div class="content">
             <p align="center">
-                {{ link_to('login', image('img/lesaja.png', 'width': '200')) }}
+                {{ link_to('dashboard', image('img/lesaja.png', 'width': '200')) }}
             </p>
             <div class="css-tabluar1">
                 <div class="css-lapisankedua1">

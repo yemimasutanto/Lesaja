@@ -13,7 +13,7 @@
     <div class="box" align = "center"> 
         <div class="content" align="center">
             <p>
-                <?= $this->tag->linkTo(['login', $this->tag->image(['img/lesaja.png', 'width' => '200'])]) ?>
+                <?= $this->tag->linkTo(['dashboard', $this->tag->image(['img/lesaja.png', 'width' => '200'])]) ?>
             </p>
             <div class="css-tabluar">
                 <div class="css-lapisankedua">
@@ -35,10 +35,10 @@
                 </div>
             </div>
             <p><br><br>
-            <input class="form-control mr-sm-2" name="nama" type="text" value="<?php echo $this->session->get('AUTH_NAME'); ?>">
+            <input class="form-control mr-sm-2" name="nama" type="text" required value="<?php echo $this->session->get('AUTH_NAME'); ?>">
             </p>
             <p><br>
-            <input class="form-control mr-sm-2" name="email" type="email" value="<?php echo $this->session->get('AUTH_EMAIL'); ?>">
+            <input class="form-control mr-sm-2" name="tgl-lahir" type="date" required value="<?php echo $this->session->get('AUTH_TGLLAHIR'); ?>">
             </p><br><br>
             <div class="btnbawah" align="center">
                 <div align="center">

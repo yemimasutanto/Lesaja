@@ -21,6 +21,11 @@ class RegisterController extends ControllerBase
         $password_murid = $this->request->getPost('password', 'string');
         $confirm = $this->request->getPost('confirm', 'string');
 
+        if (strpos($email_murid, "@lesaja.com")) {
+            $this->flashSession->error("Email tidak sah");
+            $this->response->redirect('register');
+        }
+
         $exist = Murid::findFirst(
             [
                 'conditions' => 'email_murid = :email:',
@@ -30,30 +35,27 @@ class RegisterController extends ControllerBase
             ]
         );
 
-        if ($exist){
+        if ($exist) {
             $this->flashSession->error("Email telah terdaftar");
             $this->response->redirect('register');
-        }
-
-        else{
+        } else {
             if ($password_murid != $confirm){
                 $this->flashSession->error("Password tidak cocok");
                 $this->response->redirect('register');
                 return false;
-            }
-            else{
+            } else {
                 // set value
                 $user->nama_murid = $nama_murid;
                 $user->email_murid = $email_murid;
                 $user->password_murid = $password_murid;
 
                 $success = $user->save();
-                var_dump($success); 
+                // var_dump($success); 
 
                 // Log the user
-                if ($success)
-                {
+                if ($success) {
                     $this->flashSession->success("Berhasil terdaftar!");
+
                     // Set a session
                     $this->session->set('AUTH_ID', $user->id_murid);
                     $this->session->set('AUTH_NAME', $user->nama_murid);
@@ -62,11 +64,7 @@ class RegisterController extends ControllerBase
                     
                     $this->response->redirect("/dashboard");
 
-                }
-                else
-                {
-                    return $this->response->redirect('login');
-                }
+                } else return $this->response->redirect('login');
             }
         }
      }

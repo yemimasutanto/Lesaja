@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 Use App\Models\Kelas;
+Use App\Models\Mapel;
 
 class CreateClassController extends ControllerBase
 {  
@@ -18,57 +19,40 @@ class CreateClassController extends ControllerBase
         // get value
         $id_tentor = $this->session->get('AUTH_ID');
         $jenjang = $this->request->getPost("jenjang");
-        $mapel = $this->request->getPost("mapel");
+        $nama_mapel = $this->request->getPost("mapel");
 
         $this->response->redirect('/index');
 
-        // $exist = Kelas::findFirst(
-        //     [
-        //         'conditions' => 'email_murid = :email:',
-        //         'bind'       => [
-        //             'email' => $email_murid,
-        //         ],
-        //     ]
-        // );
+        $exist = Mapel::findFirst(
+            [
+                'conditions' => 'nama_mapel = ?1 AND jenjang = ?2',
+                'bind'       => [
+                    1 => $nama_mapel,
+                    2 => $jenjang
+                ],
+            ]
+        );
 
-        // if ($exist){
-        //     $this->flashSession->error("Email telah terdaftar");
-        //     $this->response->redirect('register');
-        // }
+        if (!$exist){
+            $this->flashSession->error("Mata pelajaran dalam jenjang yang diminta tidak tersedia");
+            $this->response->redirect('createclass');
+        } else {
+            // set value
+            $kelas->id_mapel = $exist->id_mapel;
+            $kelas->id_tentor = $id_tentor;
 
-        // else{
-        //     if ($password_murid != $confirm){
-        //         $this->flashSession->error("Password tidak cocok");
-        //         $this->response->redirect('register');
-        //         return false;
-        //     }
-        //     else{
-        //         // set value
-        //         $user->nama_murid = $nama_murid;
-        //         $user->email_murid = $email_murid;
-        //         $user->password_murid = $password_murid;
+            $success = $kelas->save();
+            // var_dump($success); 
 
-        //         $success = $user->save();
-        //         var_dump($success); 
+            // Notify the user
+            if ($success) {
+                $this->flashSession->success("Kelas berhasil dibuat!"); 
+                $this->response->redirect("/index");
 
-        //         // Log the user
-        //         if ($success)
-        //         {
-        //             $this->flashSession->success("Berhasil terdaftar!");
-        //             // Set a session
-        //             $this->session->set('AUTH_ID', $user->id_murid);
-        //             $this->session->set('AUTH_NAME', $user->nama_murid);
-        //             $this->session->set('AUTH_EMAIL', $user->email_murid);
-        //             $this->session->set('AUTH_PASS', $user->password_murid);  
-                    
-        //             $this->response->redirect("/dashboard");
-
-        //         }
-        //         else
-        //         {
-        //             return $this->response->redirect('login');
-        //         }
-        //     }
-        // }
-     }
+            } else {
+                $this->flashSession->error("Kelas gagal dibuat"); 
+                return $this->response->redirect('createclass');
+            }
+        }
+    }
 }     

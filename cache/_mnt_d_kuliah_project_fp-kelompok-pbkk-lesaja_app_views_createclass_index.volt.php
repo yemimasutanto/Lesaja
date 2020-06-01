@@ -18,12 +18,37 @@
 
             <select name="mapel" class="form-control mr-sm-2" style="margin: 10px 0;">
                 <option value="" disabled selected>Pilih mata pelajaran..</option>
-                <option value="mat">Matematika</option>
-                <option value="bindo">Bahasa Indonesia</option>
-                <option value="bing">Bahasa Inggris</option>
-                <option value="ipa">IPA</option>
-                <option value="ips">IPS</option>
-                <option value="tik">TIK</option>
+                <optgroup label="SD">
+                    <option value="Matematika">Matematika</option>
+                    <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+                    <option value="Bahasa Inggris">Bahasa Inggris</option>
+                    <option value="IPA">IPA</option>
+                    <option value="IPS">IPS</option>
+                    <option value="TIK">TIK</option>
+                </optgroup>
+                <optgroup label="SMP">
+                    <option value="Matematika">Matematika</option>
+                    <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+                    <option value="Bahasa Inggris">Bahasa Inggris</option>
+                    <option value="TIK">TIK</option>
+                    <option value="Biologi">Biologi</option>
+                    <option value="Kimia">Kimia</option>
+                    <option value="Fisika">Fisika</option>
+                    <option value="Sejarah">Sejarah</option>
+                </optgroup>
+                <optgroup label="SMA">
+                    <option value="Matematika">Matematika</option>
+                    <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+                    <option value="Bahasa Inggris">Bahasa Inggris</option>
+                    <option value="Akuntansi">Akuntansi</option>
+                    <option value="TIK">TIK</option>
+                    <option value="Biologi">Biologi-IPA</option>
+                    <option value="Kimia">Kimia-IPA</option>
+                    <option value="Fisika">Fisika-IPA</option>
+                    <option value="Sejarah">Sejarah-IPS</option>
+                    <option value="Geografi">Geografi-IPS</option>
+                    <option value="Sosiologi">Sosiologi-IPS</option>
+                </optgroup>
             </select>
             <br>
             <div align="center">

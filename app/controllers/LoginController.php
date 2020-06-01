@@ -57,6 +57,8 @@ class LoginController extends ControllerBase{
                 if ($password_input === $user_murid->password_murid){
                     $this->session->set('AUTH_ID', $user_murid->id_murid);
                     $this->session->set('AUTH_NAME', $user_murid->nama_murid);
+                    $this->session->set('AUTH_TGLLAHIR', $user_murid->tgl_lahir);
+                    $this->session->set('AUTH_NOHP', $user_murid->no_hp);
                     $this->session->set('AUTH_EMAIL', $user_murid->email_murid);
                     $this->session->set('AUTH_PASS', $user_murid->password_murid);   
 
@@ -68,7 +70,6 @@ class LoginController extends ControllerBase{
                     $this->session->set('AUTH_NAME', $user_tentor->nama_tentor);
                     $this->session->set('AUTH_EMAIL', $user_tentor->email_tentor);
                     $this->session->set('AUTH_PASS', $user_tentor->password_tentor);   
-
                     return $this->response->redirect('/index');
                 }
             } else {
