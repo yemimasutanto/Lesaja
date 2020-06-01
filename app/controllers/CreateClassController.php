@@ -47,7 +47,7 @@ class CreateClassController extends ControllerBase
             // Notify the user
             if ($success) {
                 $this->flashSession->success("Kelas berhasil dibuat!"); 
-                $this->response->redirect("/index");
+                return $this->response->redirect("/createclass");
 
             } else {
                 $this->flashSession->error("Kelas gagal dibuat"); 
